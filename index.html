@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch Code Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scratch Code Visualizer</h1>
+            <p>AIが生成したコードをScratchブロックで表示します</p>
+        </header>
+        
+        <div class="input-section">
+            <h2>コード入力</h2>
+            <textarea id="code-input" placeholder="ここにコードを貼り付けてください...
+
+英語の例:
+forward(50)
+turn_right(90)
+pen_down()
+repeat(4):
+    forward(100)
+    turn_right(90)
+
+日本語の例:
+進む(50)
+右に回る(90)
+ペンを下ろす
+4回繰り返し:
+    進む(100)
+    右に回る(90)"></textarea>
+            <button id="convert-btn">ブロック表示に変換</button>
+        </div>
+        
+        <div class="output-section">
+            <h2>Scratchブロック表示</h2>
+            <div id="blocks-container" class="blocks-workspace">
+                <div class="placeholder">ここにScratchブロックが表示されます</div>
+            </div>
+        </div>
+        
+        <div class="examples-section">
+            <h3>サンプルコード</h3>
+            <div class="examples">
+                <button class="example-btn" data-code="forward(50)&#10;turn_right(90)&#10;forward(50)&#10;turn_left(90)">基本移動（英語）</button>
+                <button class="example-btn" data-code="pen_down()&#10;repeat(4):&#10;    forward(100)&#10;    turn_right(90)&#10;pen_up()">四角形描画（英語）</button>
+                <button class="example-btn" data-code="進む(50)&#10;右に回る(90)&#10;進む(50)&#10;左に回る(90)">基本移動（日本語）</button>
+                <button class="example-btn" data-code="ペンを下ろす&#10;4回繰り返し:&#10;    進む(100)&#10;    右に回る(90)&#10;ペンを上げる">四角形描画（日本語）</button>
+                <button class="example-btn" data-code="「こんにちは」と言う&#10;3秒待つ&#10;「ありがとう」と考える">会話サンプル</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

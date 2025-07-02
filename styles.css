@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.input-section, .output-section, .examples-section {
+    background: white;
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+    color: #333;
+    margin-bottom: 15px;
+    border-left: 4px solid #4285f4;
+    padding-left: 15px;
+}
+
+#code-input {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+#code-input:focus {
+    outline: none;
+    border-color: #4285f4;
+}
+
+#convert-btn {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#convert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+.blocks-workspace {
+    min-height: 300px;
+    background: #f8f9fa;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.placeholder {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 100px;
+}
+
+/* Scratch Block Styles */
+.scratch-block {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: move;
+    position: relative;
+    min-height: 35px;
+    line-height: 1.4;
+}
+
+.block-motion {
+    background: #4C97FF;
+    border: 2px solid #3373DC;
+}
+
+.block-looks {
+    background: #9966FF;
+    border: 2px solid #7D4CDB;
+}
+
+.block-sound {
+    background: #CF63CF;
+    border: 2px solid #AD4DAD;
+}
+
+.block-pen {
+    background: #0FBD8C;
+    border: 2px solid #0B9A6B;
+}
+
+.block-control {
+    background: #FFAB19;
+    border: 2px solid #E09100;
+}
+
+.block-sensing {
+    background: #5CB1D6;
+    border: 2px solid #4C97C9;
+}
+
+.block-operators {
+    background: #59C059;
+    border: 2px solid #46A846;
+}
+
+.block-variables {
+    background: #FF8C1A;
+    border: 2px solid #E6781A;
+}
+
+.block-container {
+    margin: 10px 0;
+    min-height: 50px;
+}
+
+.nested-blocks {
+    margin-left: 20px;
+    border-left: 3px solid #ddd;
+    padding-left: 15px;
+    margin-top: 10px;
+}
+
+/* Control block special styling */
+.block-control.repeat-block {
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+}
+
+.repeat-end {
+    background: #FFAB19;
+    border: 2px solid #E09100;
+    border-radius: 0 0 8px 8px;
+    margin-top: 0;
+    margin-left: 5px;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+/* Examples section */
+.examples {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.example-btn {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.example-btn:hover {
+    background: #e9ecef;
+    border-color: #4285f4;
+    transform: translateY(-1px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    header p {
+        font-size: 1em;
+    }
+    
+    .examples {
+        justify-content: center;
+    }
+    
+    .example-btn {
+        flex: 1 1 auto;
+        min-width: 120px;
+    }
+}
+
+/* Animation for blocks */
+.scratch-block {
+    animation: blockAppear 0.3s ease-out;
+}
+
+@keyframes blockAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
